@@ -13,6 +13,7 @@ import referenceClasses.ListNode;
  *	You should try to do it in place. The program should run in O(1) space complexity and O(nodes) time complexity.
  */
 
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -23,8 +24,29 @@ import referenceClasses.ListNode;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-public class OddEvenLinkedList {
-	 public ListNode oddEvenList(ListNode head) {
-	        
-	    }
+class Solution {
+    public ListNode oddEvenList(ListNode head) {
+        if(head==null || head.next==null)
+        {
+             return head;
+        }
+           
+        
+        ListNode odd=head;
+        ListNode even=head.next;
+        ListNode temp=even;
+        while(even.next!=null && odd.next!=null){
+            if(even.next!=null){
+                odd.next=odd.next.next;
+                odd=odd.next;
+            }if(odd.next!=null){
+                even.next=even.next.next;
+                even=even.next;
+            }
+        }
+        even.next=null;
+        odd.next=temp;
+       
+        return head;
+    }
 }
