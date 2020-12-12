@@ -1,2 +1,2 @@
 # LeetCode
-This will be the repository for lead code website
+This will be the repository for Questions on Leet Code
